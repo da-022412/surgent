@@ -47,7 +47,7 @@ export default function Footer() {
                             </Link>
                         ))}
                     </div>
-                    <p className="text-muted-foreground mt-8 text-sm">&copy; {2026} Veil.</p>
+                    <p className="text-muted-foreground mt-8 text-sm">&copy; {2026} Claro AI.</p>
                 </div>
             </div>
         </footer>

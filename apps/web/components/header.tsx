@@ -7,9 +7,9 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'Company', href: '#link' },
+    { name: 'Features', href: '#features' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'About', href: '#about' },
 ]
 
 export const HeroHeader = () => {
@@ -72,9 +72,9 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button variant="ghost" size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="#" />} nativeButton={false}><span>Login</span></Button>
-                                <Button size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="#" />} nativeButton={false}><span>Sign Up</span></Button>
-                                <Button size="sm" className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')} render={<Link href="#" />} nativeButton={false}><span>Get Started</span></Button>
+                                <Button variant="ghost" size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="#" />} nativeButton={false}><span>Log in</span></Button>
+                                <Button size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="/contact" />} nativeButton={false}><span>Book a Demo</span></Button>
+                                <Button size="sm" className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')} render={<Link href="/contact" />} nativeButton={false}><span>Book a Demo</span></Button>
                             </div>
                         </div>
                     </div>

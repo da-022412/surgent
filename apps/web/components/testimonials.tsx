@@ -4,27 +4,27 @@ import { Card } from '@/components/ui/card'
 const testimonials = [
     {
         avatar: 'https://avatars.githubusercontent.com/u/47919550?v=4',
-        name: 'Meschac Irung',
-        role: 'Frontend Engineer at Acme',
-        quote: 'Tailark has been a game-changer for our team. It has helped us to build a modern and scalable web application.',
+        name: 'Marcus Chen',
+        role: 'Founder, Velocity Labs',
+        quote: 'Claro cut our outreach time in half. We went from manually sending 20 emails a day to running agents across our entire book of business.',
     },
     {
         avatar: 'https://avatars.githubusercontent.com/u/68236786?v=4',
-        name: 'Theo Balick',
-        role: 'Founder, CEO - Acme',
-        quote: 'Tailark has been a game-changer for our team. It has helped us to build a modern and scalable web application.',
+        name: 'Priya Nair',
+        role: 'Marketing Director, Bloom Agency',
+        quote: 'I was skeptical about AI tools but Claro actually just works. It connected to our CRM in minutes and the agents were running the same day.',
     },
     {
         avatar: 'https://avatars.githubusercontent.com/u/12345678?v=4',
-        name: 'Sarah Johnson',
-        role: 'DevOps Engineer',
-        quote: 'Tailark has been a game-changer for our team. It has helped us to build a modern and scalable web application.',
+        name: 'James Okafor',
+        role: 'Managing Partner, Okafor & Associates',
+        quote: "We use Claro for client intake, deadline tracking, and follow-ups. It handles the admin so we can bill more hours.",
     },
     {
         avatar: 'https://avatars.githubusercontent.com/u/34567890?v=4',
-        name: 'Aisha Patel',
-        role: 'Data Scientist',
-        quote: 'Tailark has been a game-changer for our team. It has helped us to build a modern and scalable web application.',
+        name: 'Sofia Reyes',
+        role: 'Head of Operations, Redpoint Growth',
+        quote: 'The integrations are what sold us. Everything we already used — Slack, our CRM, email — Claro plugged right in without any IT support.',
     },
 ]
 
@@ -33,8 +33,8 @@ export default function Testimonials() {
         <section className="bg-background @container py-24">
             <div className="mx-auto max-w-2xl px-6">
                 <div className="space-y-4">
-                    <h2 className="text-balance font-serif text-4xl font-medium">What Our Customers Say</h2>
-                    <p className="text-muted-foreground text-balance">Hear from the teams and individuals who have transformed their workflow with our platform.</p>
+                    <h2 className="text-balance font-serif text-4xl font-medium">Don't Take Our Word for It</h2>
+                    <p className="text-muted-foreground text-balance">From solo founders to law firms and growing agencies — here's what teams are saying about Claro.</p>
                 </div>
                 <div className="@xl:grid-cols-2 mt-12 grid gap-3">
                     {testimonials.map((testimonial, index) => (

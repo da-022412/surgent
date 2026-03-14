@@ -33,10 +33,10 @@ export default function HeroSection() {
                         </div>
                         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
                             <div className="mx-auto max-w-md text-center">
-                                <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">Ship faster. Integrate smarter.</h1>
-                                <p className="text-muted-foreground mt-4 text-balance">Veil is your all-in-one engine for adding seamless integrations to your app.</p>
+                                <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">Still Running Your Business Manually?</h1>
+                                <p className="text-muted-foreground mt-4 text-balance">Claro builds custom AI agents that connect your existing tools, run your workflows automatically, and keep every project, case, and deal moving — without changing how your team works.</p>
 
-                                <Button className="mt-6 pr-1.5" render={<Link href="#link" />} nativeButton={false}><span className="text-nowrap">Start Building</span><ChevronRight className="opacity-50" /></Button>
+                                <Button className="mt-6 pr-1.5" render={<Link href="/contact" />} nativeButton={false}><span className="text-nowrap">Book a Demo</span><ChevronRight className="opacity-50" /></Button>
                             </div>
                             <div className="mx-auto mt-24 max-w-xl">
                                 <div className="**:fill-foreground grid scale-95 grid-cols-3 gap-12">

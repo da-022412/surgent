@@ -5,25 +5,25 @@ export default function Stats() {
         <section className="bg-background @container py-24">
             <div className="mx-auto max-w-2xl px-6">
                 <div className="space-y-4">
-                    <h2 className="text-balance font-serif text-4xl font-medium">Trusted by Teams Worldwide</h2>
-                    <p className="text-muted-foreground text-balance">Our platform delivers measurable results that help businesses scale faster and work smarter.</p>
+                    <h2 className="text-balance font-serif text-4xl font-medium">Why Are You Still Doing This By Hand?</h2>
+                    <p className="text-muted-foreground text-balance">Claro gives growing businesses the kind of AI agents that used to require an enterprise budget and a dev team.</p>
                 </div>
                 <div className="@xl:grid-cols-3 mt-12 grid grid-cols-2 gap-6 text-sm">
                     <div className="border-y py-6">
                         <p className="text-muted-foreground text-xl">
-                            <span className="text-foreground font-medium">99.9%</span> Uptime guarantee.
+                            <span className="text-foreground font-medium">Under 24 hours</span> to deploy your first agent.
                         </p>
                     </div>
 
                     <div className="border-y py-6">
                         <p className="text-muted-foreground text-xl">
-                            <span className="text-foreground font-medium">10M+</span> API requests processed daily.
+                            <span className="text-foreground font-medium">50+</span> native integrations, ready on day one.
                         </p>
                     </div>
 
                     <div className="border-y py-6">
                         <p className="text-muted-foreground text-xl">
-                            <span className="text-foreground font-medium">500+</span> Enterprise customers.
+                            <span className="text-foreground font-medium">Zero</span> tools replaced. Your stack stays exactly as-is.
                         </p>
                     </div>
                 </div>

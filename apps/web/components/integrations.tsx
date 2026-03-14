@@ -1,4 +1,3 @@
-import { ChevronRight } from 'lucide-react'
 import { Vercel } from '@/components/ui/svgs/vercel'
 import { Supabase } from '@/components/ui/svgs/supabase'
 import { Linear } from '@/components/ui/svgs/linear'
@@ -7,8 +6,6 @@ import { Firebase } from '@/components/ui/svgs/firebase'
 import { ClerkIconDark as Clerk } from '@/components/ui/svgs/clerk'
 import { LogoIcon } from '@/components/logo'
 
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 
 export default function Integrations() {
     return (
@@ -16,10 +13,8 @@ export default function Integrations() {
             <div className="mx-auto max-w-2xl">
                 <IntegrationsIllustration />
                 <div className="mx-auto mt-12 max-w-md text-balance px-6 text-center">
-                    <h2 className="font-serif text-4xl font-medium">Connect Your Favorite Tools</h2>
-                    <p className="text-muted-foreground mb-6 mt-4">Seamlessly integrate with the services you already use. Set up in minutes, not days.</p>
-                    <Button variant="secondary" size="sm" className="gap-1 pr-1.5" render={<Link href="#" />} nativeButton={false}>Learn more
-                                                <ChevronRight /></Button>
+                    <h2 className="font-serif text-4xl font-medium">Works With Everything You Already Use</h2>
+                    <p className="text-muted-foreground mb-6 mt-4">Claro connects directly to your existing stack — no rip-and-replace, no new logins, no migration required.</p>
                 </div>
             </div>
         </section>

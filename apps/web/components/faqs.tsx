@@ -6,28 +6,28 @@ import Link from 'next/link'
 const faqItems = [
     {
         id: 'item-1',
-        question: 'How does the free trial work?',
-        answer: 'Start with a 14-day free trial with full access to all features. No credit card required. You can upgrade to a paid plan at any time during or after the trial.',
+        question: 'What is Claro and who is it built for?',
+        answer: 'Claro is an AI automation platform built for founders, marketers, agencies, lawyers, and SMB owners. If you're managing workflows, outreach, or pipelines manually — Claro builds the agents that replace that work.',
     },
     {
         id: 'item-2',
-        question: 'Can I change my plan later?',
-        answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the difference.",
+        question: 'How is Claro different from other AI tools?',
+        answer: 'Most AI platforms are either too generic to be useful or too enterprise to be accessible. Claro gives you custom agents connected to your real tools, automating your actual workflows — without an 18-month implementation or a $30M minimum.',
     },
     {
         id: 'item-3',
-        question: 'What payment methods do you accept?',
-        answer: 'We accept all major credit cards, PayPal, and bank transfers for annual plans. Enterprise customers can also pay via invoice.',
+        question: 'Do I need technical skills to get started?',
+        answer: 'No. If you can describe your workflow, Claro can automate it. Most teams are up and running within 24 hours — no developers required.',
     },
     {
         id: 'item-4',
-        question: 'Is there a setup fee?',
-        answer: 'No, there are no setup fees or hidden costs. You only pay for your subscription plan.',
+        question: 'What tools does Claro integrate with?',
+        answer: 'Claro integrates with the tools you already use — CRM, email, project management, billing, and more. Setup takes hours, not months, and nothing in your existing stack needs to change.',
     },
     {
         id: 'item-5',
-        question: 'Do you offer refunds?',
-        answer: "We offer a 30-day money-back guarantee. If you're not satisfied, contact us within 30 days for a full refund.",
+        question: 'How do I get started?',
+        answer: "Book a demo and we'll walk you through your first agent live. Most teams have their first agent running by the end of the call.",
     },
 ]
 
@@ -35,7 +35,7 @@ export default function FAQs() {
     return (
         <section className="bg-background @container py-24">
             <div className="mx-auto max-w-2xl px-6">
-                <h2 className="text-center font-serif text-4xl font-medium">Your Questions Answered</h2>
+                <h2 className="text-center font-serif text-4xl font-medium">Good Questions. Here Are the Answers.</h2>
                 <Accordion
                     type="single"
                     collapsible
@@ -61,7 +61,7 @@ export default function FAQs() {
                     <Link
                         href="#"
                         className="text-primary font-medium hover:underline">
-                        Contact support
+                        Contact us
                     </Link>
                 </p>
             </div>

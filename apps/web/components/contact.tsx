@@ -12,7 +12,7 @@ export default function Contact() {
             <div className="mx-auto max-w-3xl px-6">
                 <div>
                     <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">Get in Touch</h1>
-                    <p className="text-muted-foreground mt-4 max-w-md text-balance">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    <p className="text-muted-foreground mt-4 max-w-md text-balance">Got a workflow you want to automate? A process that's eating your team's time? Tell us about it.</p>
                 </div>
 
                 <div className="@xl:grid-cols-5 mt-12 grid gap-8">
@@ -20,25 +20,12 @@ export default function Contact() {
                         <div>
                             <p className="text-foreground text-sm font-medium">Email</p>
                             <Link
-                                href="mailto:hello@example.com"
+                                href="mailto:hello@claroai.com"
                                 className="text-muted-foreground hover:text-primary text-sm">
-                                hello@example.com
+                                hello@claroai.com
                             </Link>
                         </div>
 
-                        <div>
-                            <p className="text-foreground text-sm font-medium">Phone</p>
-                            <Link
-                                href="tel:+1234567890"
-                                className="text-muted-foreground hover:text-primary text-sm">
-                                +1 (234) 567-890
-                            </Link>
-                        </div>
-
-                        <div>
-                            <p className="text-foreground text-sm font-medium">Office</p>
-                            <p className="text-muted-foreground text-sm">123 Main Street, San Francisco, CA 94102</p>
-                        </div>
                     </div>
 
                     <Card
@@ -88,7 +75,7 @@ export default function Contact() {
                                     type="text"
                                     id="subject"
                                     name="subject"
-                                    placeholder="How can we help?"
+                                    placeholder="What do you want to automate?"
                                 />
                             </div>
 
@@ -102,7 +89,7 @@ export default function Contact() {
                                     id="message"
                                     name="message"
                                     rows={4}
-                                    placeholder="Tell us more..."
+                                    placeholder="Describe your workflow or process"
                                     required
                                     className="min-h-28"
                                 />
