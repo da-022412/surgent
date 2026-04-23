@@ -14,7 +14,7 @@ export default function Integrations() {
                 <IntegrationsIllustration />
                 <div className="mx-auto mt-12 max-w-md text-balance px-6 text-center">
                     <h2 className="font-serif text-4xl font-medium">Works With Everything You Already Use</h2>
-                    <p className="text-muted-foreground mb-6 mt-4">Claro connects directly to your existing stack — no rip-and-replace, no new logins, no migration required.</p>
+                    <p className="text-muted-foreground mb-6 mt-4">Surgent connects directly to your existing stack — no rip-and-replace, no new logins, no migration required.</p>
                 </div>
             </div>
         </section>

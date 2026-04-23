@@ -20,9 +20,9 @@ export default function Contact() {
                         <div>
                             <p className="text-foreground text-sm font-medium">Email</p>
                             <Link
-                                href="mailto:hello@claroai.com"
+                                href="mailto:hello@getsurgent.com"
                                 className="text-muted-foreground hover:text-primary text-sm">
-                                hello@claroai.com
+                                hello@getsurgent.com
                             </Link>
                         </div>
 

@@ -6,7 +6,7 @@ export default function Stats() {
             <div className="mx-auto max-w-2xl px-6">
                 <div className="space-y-4">
                     <h2 className="text-balance font-serif text-4xl font-medium">Why Are You Still Doing This By Hand?</h2>
-                    <p className="text-muted-foreground text-balance">Claro gives growing businesses the kind of AI agents that used to require an enterprise budget and a dev team.</p>
+                    <p className="text-muted-foreground text-balance">Surgent gives growing businesses the kind of AI agents that used to require an enterprise budget and a dev team.</p>
                 </div>
                 <div className="@xl:grid-cols-3 mt-12 grid grid-cols-2 gap-6 text-sm">
                     <div className="border-y py-6">
@@ -17,7 +17,7 @@ export default function Stats() {
 
                     <div className="border-y py-6">
                         <p className="text-muted-foreground text-xl">
-                            <span className="text-foreground font-medium">50+</span> native integrations, ready on day one.
+                            <span className="text-foreground font-medium">Every workflow</span> mapped to your exact process, not a template.
                         </p>
                     </div>
 

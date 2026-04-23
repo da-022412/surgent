@@ -34,7 +34,7 @@ export default function HeroSection() {
                         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
                             <div className="mx-auto max-w-md text-center">
                                 <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">Still Running Your Business Manually?</h1>
-                                <p className="text-muted-foreground mt-4 text-balance">Claro builds custom AI agents that connect your existing tools, run your workflows automatically, and keep every project, case, and deal moving — without changing how your team works.</p>
+                                <p className="text-muted-foreground mt-4 text-balance">Surgent builds custom AI agents that connect your existing tools, run your workflows automatically, and keep every project, case, and deal moving — without changing how your team works.</p>
 
                                 <Button className="mt-6 pr-1.5" render={<Link href="/contact" />} nativeButton={false}><span className="text-nowrap">Book a Demo</span><ChevronRight className="opacity-50" /></Button>
                             </div>

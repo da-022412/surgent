@@ -49,7 +49,7 @@ export default function Features() {
                             data-selected={feature === 'no-code-setup'}
                             className="not-data-[selected=true]:hover:text-foreground not-data-[selected=true]:text-muted-foreground flex items-center gap-3 py-2 text-sm">
                             <Cpu className="size-4" />
-                            <span className="in-data-[selected=true]:text-shadow-[0.2px_0_0_currentColor]">Zero Engineering Required</span>
+                            <span className="in-data-[selected=true]:text-shadow-[0.2px_0_0_currentColor]">We Build It For You</span>
                         </button>
                         <button
                             onClick={() => setFeature('secure-by-default')}

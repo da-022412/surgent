@@ -4,7 +4,7 @@ export const Logo = ({ className }: { className?: string }) => {
     return (
         <div className={cn('flex items-center gap-2', className)}>
             <LogoIcon />
-            <span className="text-foreground font-sans text-base font-semibold tracking-tight">Claro AI</span>
+            <span className="text-foreground font-sans text-base font-semibold tracking-tight">Surgent</span>
         </div>
     )
 }

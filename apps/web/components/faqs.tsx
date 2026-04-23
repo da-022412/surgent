@@ -6,23 +6,23 @@ import Link from 'next/link'
 const faqItems = [
     {
         id: 'item-1',
-        question: 'What is Claro and who is it built for?',
-        answer: 'Claro is an AI automation platform built for founders, marketers, agencies, lawyers, and SMB owners. If you're managing workflows, outreach, or pipelines manually — Claro builds the agents that replace that work.',
+        question: 'What is Surgent and who is it built for?',
+        answer: "Surgent is an AI automation platform built for founders, marketers, agencies, lawyers, and SMB owners. If you're managing workflows, outreach, or pipelines manually — Surgent builds the agents that replace that work.",
     },
     {
         id: 'item-2',
-        question: 'How is Claro different from other AI tools?',
-        answer: 'Most AI platforms are either too generic to be useful or too enterprise to be accessible. Claro gives you custom agents connected to your real tools, automating your actual workflows — without an 18-month implementation or a $30M minimum.',
+        question: 'How is Surgent different from other AI tools?',
+        answer: 'Most AI platforms are either too generic to be useful or too enterprise to be accessible. Surgent gives you custom agents connected to your real tools, automating your actual workflows — without an 18-month implementation or a $30M minimum.',
     },
     {
         id: 'item-3',
         question: 'Do I need technical skills to get started?',
-        answer: 'No. If you can describe your workflow, Claro can automate it. Most teams are up and running within 24 hours — no developers required.',
+        answer: 'No. If you can describe your workflow, Surgent can automate it. Most teams are up and running within 24 hours — no developers required.',
     },
     {
         id: 'item-4',
-        question: 'What tools does Claro integrate with?',
-        answer: 'Claro integrates with the tools you already use — CRM, email, project management, billing, and more. Setup takes hours, not months, and nothing in your existing stack needs to change.',
+        question: 'What tools does Surgent integrate with?',
+        answer: 'Surgent integrates with the tools you already use — CRM, email, project management, billing, and more. Setup takes hours, not months, and nothing in your existing stack needs to change.',
     },
     {
         id: 'item-5',
@@ -37,8 +37,7 @@ export default function FAQs() {
             <div className="mx-auto max-w-2xl px-6">
                 <h2 className="text-center font-serif text-4xl font-medium">Good Questions. Here Are the Answers.</h2>
                 <Accordion
-                    type="single"
-                    collapsible
+                    multiple={false}
                     className="mt-12">
                     {faqItems.map((item) => (
                         <div
