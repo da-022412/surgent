@@ -48,38 +48,38 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: lab(97.4255% .777781 1.34114);
+  --foreground: lab(23.5776% 7.04135 13.6149);
+  --card: lab(97.4255% .777781 1.34114);
+  --card-foreground: lab(23.5776% 7.04135 13.6149);
+  --popover: lab(97.4255% .777781 1.34114);
+  --popover-foreground: lab(23.5776% 7.04135 13.6149);
+  --primary: lab(53.0779% 10.0402 19.8462);
+  --primary-foreground: lab(2.74243% -.0000149012 0);
+  --secondary: lab(89.2451% .0142753 4.28841);
+  --secondary-foreground: lab(23.5776% 7.04135 13.6149);
+  --muted: lab(89.2451% .0142753 4.28841);
+  --muted-foreground: lab(36.9036% 1.36352 1.7642);
+  --accent: lab(89.2451% .0142753 4.28841);
+  --accent-foreground: lab(24.2943% .87668 9.12858);
   --destructive: oklch(0.58 0.22 27);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: lab(89.2451% .0142753 4.28841);
+  --input: lab(89.2451% .0142753 4.28841);
+  --ring: lab(53.0779% 10.0402 19.8462);
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
   --chart-4: oklch(0.488 0.243 264.376);
   --chart-5: oklch(0.424 0.199 265.638);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: lab(97.4255% .777781 1.34114);
+  --sidebar-foreground: lab(23.5776% 7.04135 13.6149);
+  --sidebar-primary: lab(53.0779% 10.0402 19.8462);
+  --sidebar-primary-foreground: lab(2.74243% -.0000149012 0);
+  --sidebar-accent: lab(89.2451% .0142753 4.28841);
+  --sidebar-accent-foreground: lab(24.2943% .87668 9.12858);
+  --sidebar-border: lab(89.2451% .0142753 4.28841);
+  --sidebar-ring: lab(53.0779% 10.0402 19.8462);
 }
 
 .dark {
