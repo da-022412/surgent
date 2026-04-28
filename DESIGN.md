@@ -51,12 +51,126 @@ spacing:
   sm: "8px"
   md: "16px"
   lg: "32px"
+
+components:
+  SurgentButton:
+    primary:
+      backgroundColor: "oklch(40% 0.18 145)"
+      textColor: "oklch(98% 0.003 145)"
+      typography: "label-mono"
+      rounded: "sm"
+      height: "36px"
+      padding: "0 20px"
+    ghost:
+      backgroundColor: "transparent"
+      textColor: "oklch(40% 0.18 145)"
+      typography: "label-mono"
+      rounded: "sm"
+      height: "36px"
+      padding: "0 20px"
+  SurgentInputField:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "oklch(12% 0.01 145)"
+    rounded: "sm"
+    height: "36px"
+    padding: "0 12px"
+  SurgentSelect:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "oklch(12% 0.01 145)"
+    rounded: "sm"
+    height: "36px"
+    padding: "0 12px"
+  SurgentTextarea:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "oklch(12% 0.01 145)"
+    rounded: "sm"
+    height: "100px"
+    padding: "10px 12px"
+  SurgentAccordion:
+    backgroundColor: "transparent"
+    textColor: "oklch(12% 0.01 145)"
+    padding: "18px 0"
+  SurgentAlert:
+    info:
+      backgroundColor: "oklch(95% 0.006 145)"
+      textColor: "oklch(12% 0.01 145)"
+      rounded: "sm"
+      padding: "14px 16px"
+    success:
+      backgroundColor: "oklch(40% 0.18 145 / 0.05)"
+      textColor: "oklch(40% 0.18 145)"
+      rounded: "sm"
+      padding: "14px 16px"
+    warning:
+      backgroundColor: "oklch(78% 0.18 85 / 0.05)"
+      textColor: "oklch(60% 0.15 85)"
+      rounded: "sm"
+      padding: "14px 16px"
+    error:
+      backgroundColor: "oklch(50% 0.191 22 / 0.05)"
+      textColor: "oklch(50% 0.191 22)"
+      rounded: "sm"
+      padding: "14px 16px"
+  TagBadge:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "oklch(52% 0.008 145)"
+    typography: "label-mono"
+    rounded: "sm"
+    padding: "2px 8px"
+  StatusBadge:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "dynamic"
+    typography: "label-mono"
+    rounded: "sm"
+    padding: "3px 8px"
+  EyebrowLabel:
+    backgroundColor: "transparent"
+    textColor: "oklch(40% 0.18 145)"
+    typography: "label-mono"
+  SectionHeader:
+    backgroundColor: "transparent"
+    textColor: "oklch(12% 0.01 145)"
+  AuthorCard:
+    sm:
+      backgroundColor: "transparent"
+      textColor: "oklch(12% 0.01 145)"
+      rounded: "sm"
+      padding: "0"
+    md:
+      backgroundColor: "oklch(95% 0.006 145)"
+      textColor: "oklch(12% 0.01 145)"
+      rounded: "sm"
+      padding: "20px"
+  ArticleCard:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "oklch(12% 0.01 145)"
+    rounded: "sm"
+  DataCard:
+    backgroundColor: "oklch(95% 0.006 145)"
+    textColor: "oklch(12% 0.01 145)"
+    rounded: "sm"
+    padding: "16px"
+  NavBar:
+    backgroundColor: "oklch(98% 0.003 145)"
+    textColor: "oklch(12% 0.01 145)"
+    height: "56px"
+    padding: "0 24px"
+  ThemeToggle:
+    backgroundColor: "transparent"
+    textColor: "oklch(52% 0.008 145)"
+    size: "32px"
+    rounded: "sm"
+    padding: "6px"
+  Prose:
+    backgroundColor: "transparent"
+    textColor: "oklch(52% 0.008 145)"
+    typography: "body-md"
 ---
 
 ## Overview
 SurgentAI is built on the concept of kinetic energy and "high-voltage" automation. The design should feel fast, precise, and sophisticated. It avoids soft gradients and rounded "bubbly" SaaS tropes in favor of hard edges, high contrast, and digital glows.
 
-## Color System
+## Colors
 
 All colors use the **OKLCH** color space for perceptual uniformity and wide-gamut display accuracy. Two modes are defined: dark (obsidian/volt aesthetic) and light (a crisp green-tinted neutral system).
 
@@ -118,7 +232,31 @@ All colors use the **OKLCH** color space for perceptual uniformity and wide-gamu
 - **Sectioning:** Heavy horizontal rules (`1px solid border`) rather than background color shifts.
 - **Grid Pattern Background:** CSS `repeating-linear-gradient` lines using `--surgent-grid-line` create the technical grid overlay.
 
-## Border Radius
+## Elevation & Depth
+
+Depth is expressed through light emission, not shadow. No drop shadows — only outward glows derived from the primary color.
+
+### Outer Glow
+Primary interactive elements emit a glow at rest, intensifying on hover — simulating electrical discharge.
+
+```
+/* rest */
+box-shadow: 0 0 20px oklch(82.55% 0.182 145 / 0.2);
+/* hover */
+box-shadow: 0 0 30px oklch(82.55% 0.182 145 / 0.4);
+```
+
+Used on `SurgentButton` (primary variant), `DataCard`, and `ArticleCard`.
+
+### Hover Lift
+Interactive surfaces rise on hover via Framer Motion rather than a shadow increase.
+
+- Cards: `whileHover={{ y: -2 }}`, `transition: { duration: 0.15, ease: "easeOut" }`
+- Buttons: `whileHover={{ y: -1 }}` + `whileTap={{ scale: 0.97 }}`
+
+Never use `bounce` or `spring` physics — precision over playfulness.
+
+## Shapes
 
 Sharp edges are core to the aesthetic. The scale caps at 8px; nothing rounder.
 
@@ -128,27 +266,21 @@ Sharp edges are core to the aesthetic. The scale caps at 8px; nothing rounder.
 | `rounded-md` / `--radius-md` | `4px` | Inputs, selects, cards |
 | `rounded-lg`–`rounded-4xl` | `4px–8px` | shadcn overrides; never exceed 8px |
 
-## Component Patterns
+## Components
 
-### The Power Rail
+### Shared Patterns
+
+#### The Power Rail
 Containers representing an active process use a `2px` top border in `primary`. This is the "Power Rail" — it signals liveness and voltage. Implemented as `accent` prop on `DataCard` (default: true).
 
 ```
 absolute left-0 right-0 top-0 h-0.5 bg-surgent-primary
 ```
 
-### Outer Glow
-Primary interactive elements use `box-shadow: 0 0 20px oklch(82.55% 0.182 145 / 0.2)` at rest, intensifying to `/0.4` on hover. Simulates electrical discharge. Used on `SurgentButton` (primary variant), `DataCard`, and `ArticleCard`.
-
-### Hover Lift
-Interactive cards use `whileHover={{ y: -2 }}` via Framer Motion (`transition: duration 0.15, ease: "easeOut"`). Buttons use `whileHover={{ y: -1 }}` + `whileTap={{ scale: 0.97 }}`.
-
-### Mono Label Pattern
-All metadata, tags, labels: `font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted`. Used consistently across badges, author bylines, timestamps, field labels.
+#### Mono Label Pattern
+All metadata, tags, labels: `font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted`. Used consistently across badges, author bylines, timestamps, and field labels.
 
 ---
-
-## Component Library
 
 ### SurgentButton
 Variants: `primary` | `ghost`. Sizes: `sm` | `md` | `lg`.
@@ -222,8 +354,6 @@ Icon button (`Sun` / `Moon`). Persists selection to `localStorage` under key `su
 
 ### Prose
 `@tailwindcss/typography` wrapper with `.prose-surgent` theme applied. Headings: sans, semibold, tight tracking. Code spans: `rounded-sm border border-surgent-border bg-surgent-surface font-mono`. Blockquotes: left border in `primary`, not italic.
-
----
 
 ## Do's and Don'ts
 
