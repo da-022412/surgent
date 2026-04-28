@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /*
+   * Literal font family names required here.
+   * @theme inline resolves at CSS parse time — runtime variables like
+   * var(--font-geist-sans) won't resolve. Literal names are required.
+   */
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-heading: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+
+  /* shadcn semantic mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Surgent design tokens — exposed as Tailwind utilities */
+  --color-surgent-primary: var(--surgent-primary);
+  --color-surgent-background: var(--surgent-background);
+  --color-surgent-surface: var(--surgent-surface);
+  --color-surgent-border: var(--surgent-border);
+  --color-surgent-foreground: var(--surgent-foreground);
+  --color-surgent-muted: var(--surgent-muted);
+
+  /* Sharp border radii — Surgent aesthetic */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
+  --radius-4xl: 8px;
+}
+
+:root {
+  /* ─── Surgent OKLCH design tokens — light mode ─── */
+  --surgent-primary: oklch(40% 0.18 145);
+  --surgent-background: oklch(98% 0.003 145);
+  --surgent-surface: oklch(95% 0.006 145);
+  --surgent-border: oklch(80% 0.012 145);
+  --surgent-foreground: oklch(12% 0.01 145);
+  --surgent-muted: oklch(52% 0.008 145);
+  --surgent-grid-line: oklch(60% 0.01 145 / 0.1);
+
+  /* ─── shadcn semantic vars — light mode ─── */
+  --background: oklch(98% 0.003 145);
+  --foreground: oklch(12% 0.01 145);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(12% 0.01 145);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(12% 0.01 145);
+  --primary: oklch(40% 0.18 145);
+  --primary-foreground: oklch(98% 0.003 145);
+  --secondary: oklch(92% 0.008 145);
+  --secondary-foreground: oklch(12% 0.01 145);
+  --muted: oklch(92% 0.008 145);
+  --muted-foreground: oklch(52% 0.008 145);
+  --accent: oklch(90% 0.015 145);
+  --accent-foreground: oklch(40% 0.18 145);
+  --destructive: oklch(0.5 0.191 22.216);
+  --border: oklch(80% 0.012 145);
+  --input: oklch(92% 0.008 145);
+  --ring: oklch(40% 0.18 145 / 0.4);
+  --radius: 4px;
+  --sidebar: oklch(95% 0.006 145);
+  --sidebar-foreground: oklch(12% 0.01 145);
+  --sidebar-primary: oklch(40% 0.18 145);
+  --sidebar-primary-foreground: oklch(98% 0.003 145);
+  --sidebar-accent: oklch(90% 0.015 145);
+  --sidebar-accent-foreground: oklch(40% 0.18 145);
+  --sidebar-border: oklch(80% 0.012 145);
+  --sidebar-ring: oklch(40% 0.18 145 / 0.4);
+  --chart-1: oklch(40% 0.18 145);
+  --chart-2: oklch(52% 0.15 145);
+  --chart-3: oklch(62% 0.12 145);
+  --chart-4: oklch(72% 0.09 145);
+  --chart-5: oklch(80% 0.06 145);
+}
+
+.dark {
+  /* ─── Surgent OKLCH design tokens — dark mode ─── */
+  --surgent-primary: oklch(82.55% 0.182 145);
+  --surgent-background: oklch(12% 0.01 250);
+  --surgent-surface: oklch(16% 0.01 250);
+  --surgent-border: oklch(25% 0.02 145);
+  --surgent-foreground: oklch(92% 0.01 145);
+  --surgent-muted: oklch(60% 0.01 250);
+  --surgent-grid-line: oklch(25% 0.02 145 / 0.18);
+
+  /* ─── shadcn semantic vars — dark mode ─── */
+  --background: oklch(12% 0.01 250);
+  --foreground: oklch(92% 0.01 145);
+  --card: oklch(16% 0.01 250);
+  --card-foreground: oklch(92% 0.01 145);
+  --popover: oklch(16% 0.01 250);
+  --popover-foreground: oklch(92% 0.01 145);
+  --primary: oklch(82.55% 0.182 145);
+  --primary-foreground: oklch(12% 0.01 250);
+  --secondary: oklch(20% 0.015 250);
+  --secondary-foreground: oklch(92% 0.01 145);
+  --muted: oklch(20% 0.01 250);
+  --muted-foreground: oklch(60% 0.01 250);
+  --accent: oklch(20% 0.025 145);
+  --accent-foreground: oklch(82.55% 0.182 145);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(25% 0.02 145);
+  --input: oklch(20% 0.015 250);
+  --ring: oklch(82.55% 0.182 145 / 0.4);
+  --sidebar: oklch(16% 0.01 250);
+  --sidebar-foreground: oklch(92% 0.01 145);
+  --sidebar-primary: oklch(82.55% 0.182 145);
+  --sidebar-primary-foreground: oklch(12% 0.01 250);
+  --sidebar-accent: oklch(20% 0.025 145);
+  --sidebar-accent-foreground: oklch(82.55% 0.182 145);
+  --sidebar-border: oklch(25% 0.02 145);
+  --sidebar-ring: oklch(82.55% 0.182 145 / 0.4);
+  --chart-1: oklch(82.55% 0.182 145);
+  --chart-2: oklch(65% 0.14 145);
+  --chart-3: oklch(48% 0.1 145);
+  --chart-4: oklch(35% 0.06 145);
+  --chart-5: oklch(25% 0.04 145);
+}
+
+/* Surgent prose theme — uses CSS vars so it adapts to light/dark automatically */
+.prose.prose-surgent {
+  --tw-prose-body: var(--surgent-foreground);
+  --tw-prose-headings: var(--surgent-foreground);
+  --tw-prose-lead: var(--surgent-muted);
+  --tw-prose-links: var(--surgent-primary);
+  --tw-prose-bold: var(--surgent-foreground);
+  --tw-prose-counters: var(--surgent-muted);
+  --tw-prose-bullets: var(--surgent-muted);
+  --tw-prose-hr: var(--surgent-border);
+  --tw-prose-quotes: var(--surgent-primary);
+  --tw-prose-quote-borders: var(--surgent-primary);
+  --tw-prose-captions: var(--surgent-muted);
+  --tw-prose-code: var(--surgent-primary);
+  --tw-prose-pre-code: var(--surgent-foreground);
+  --tw-prose-pre-bg: var(--surgent-surface);
+  --tw-prose-th-borders: var(--surgent-border);
+  --tw-prose-td-borders: var(--surgent-border);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
