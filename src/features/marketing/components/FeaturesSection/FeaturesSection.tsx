@@ -42,7 +42,7 @@ export function FeaturesSection() {
         <div className="grid gap-px border border-surgent-border bg-surgent-border md:grid-cols-3">
           {pillars.map((pillar, index) => (
             <motion.div
-              key={pillar.number}
+              key={pillar.title}
               className="flex flex-col gap-6 bg-surgent-background p-10"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
