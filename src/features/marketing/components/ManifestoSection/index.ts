@@ -1,0 +1,1 @@
+export { ManifestoSection } from "./ManifestoSection";

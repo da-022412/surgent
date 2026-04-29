@@ -1,0 +1,1 @@
+export { LogoBarSection } from "./LogoBarSection";

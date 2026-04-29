@@ -6,11 +6,24 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "ghost";
 type Size = "sm" | "md" | "lg";
 
-interface SurgentButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
+interface SurgentButtonBaseProps {
   variant?: Variant;
   size?: Size;
   children: React.ReactNode;
+  className?: string;
 }
+
+interface SurgentButtonAsButton
+  extends SurgentButtonBaseProps, Omit<HTMLMotionProps<"button">, "children" | "className"> {
+  href?: undefined;
+}
+
+interface SurgentButtonAsAnchor
+  extends SurgentButtonBaseProps, Omit<HTMLMotionProps<"a">, "children" | "className"> {
+  href: string;
+}
+
+type SurgentButtonProps = SurgentButtonAsButton | SurgentButtonAsAnchor;
 
 const sizes: Record<Size, string> = {
   sm: "h-7 px-3 text-[0.7rem]",
@@ -31,29 +44,49 @@ const variants: Record<Variant, string> = {
   ].join(" "),
 };
 
+const motionProps = {
+  whileHover: { y: -1 },
+  whileTap: { y: 0, scale: 0.97 },
+  transition: { duration: 0.1, ease: "easeOut" },
+} as const;
+
 export function SurgentButton({
   variant = "primary",
   size = "md",
   className,
   children,
+  href,
   ...props
 }: SurgentButtonProps) {
+  const classes = cn(
+    "inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm font-mono font-medium uppercase tracking-widest",
+    "transition-all duration-200 outline-none",
+    "focus-visible:ring-2 focus-visible:ring-surgent-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-surgent-background",
+    "disabled:pointer-events-none disabled:opacity-40",
+    variants[variant],
+    sizes[size],
+    className
+  );
+
+  if (href !== undefined) {
+    return (
+      <motion.a
+        href={href}
+        className={classes}
+        {...motionProps}
+        {...(props as HTMLMotionProps<"a">)}
+      >
+        {children}
+      </motion.a>
+    );
+  }
+
   return (
     <motion.button
-      className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm font-mono font-medium uppercase tracking-widest",
-        "transition-all duration-200 outline-none",
-        "focus-visible:ring-2 focus-visible:ring-surgent-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-surgent-background",
-        "disabled:pointer-events-none disabled:opacity-40",
-        variants[variant],
-        sizes[size],
-        className
-      )}
+      className={classes}
       type="button"
-      whileHover={{ y: -1 }}
-      whileTap={{ y: 0, scale: 0.97 }}
-      transition={{ duration: 0.1, ease: "easeOut" }}
-      {...props}
+      {...motionProps}
+      {...(props as HTMLMotionProps<"button">)}
     >
       {children}
     </motion.button>

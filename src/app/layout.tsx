@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SurgentAI — Design System",
+  title: "SurgentAI — AI Automation Agency",
   description:
-    "OKLCH-powered design system for SurgentAI. Sharp edges, electric palette, kinetic precision.",
+    "Surgent deploys custom AI agents that handle your most repetitive workflows — so your team can focus on work that actually matters.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Runs synchronously before paint to prevent flash of wrong theme */}
         <script

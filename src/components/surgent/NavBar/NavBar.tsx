@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { SurgentButton } from "@/components/surgent/SurgentButton";
 import { ThemeToggle } from "@/components/surgent/ThemeToggle";
@@ -22,20 +21,19 @@ interface NavBarProps {
 }
 
 const defaultLinks: NavLink[] = [
-  { label: "Product", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Docs", href: "#" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Our Agents", href: "#agents" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function NavBar({
   links = defaultLinks,
-  ctaLabel = "Get Started",
-  ctaHref = "#",
+  ctaLabel = "Book a Call",
+  ctaHref = "#cta",
   className,
 }: NavBarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const router = useRouter();
 
   return (
     <header
@@ -46,7 +44,7 @@ export function NavBar({
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group" aria-label="Surgent — home">
+        <Link href="/" className="group flex items-center gap-2" aria-label="Surgent — home">
           <span
             aria-hidden
             className="size-2 rounded-none bg-surgent-primary transition-all duration-200 group-hover:shadow-[0_0_8px_oklch(82.55%_0.182_145_/_0.6)]"
@@ -72,29 +70,29 @@ export function NavBar({
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <SurgentButton variant="ghost" size="sm" onClick={() => {}}>
-            Sign In
-          </SurgentButton>
-          <SurgentButton variant="primary" size="sm" onClick={() => router.push(ctaHref)}>
+          <SurgentButton variant="primary" size="sm" href={ctaHref}>
             {ctaLabel}
           </SurgentButton>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          className="flex cursor-pointer items-center justify-center rounded-sm p-1.5 text-surgent-muted hover:text-surgent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-surgent-primary/80 md:hidden"
-          onClick={() => setMobileOpen((o) => !o)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-nav"
-        >
-          {mobileOpen ? (
-            <X className="size-4" aria-hidden />
-          ) : (
-            <Menu className="size-4" aria-hidden />
-          )}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="flex cursor-pointer items-center justify-center rounded-sm p-1.5 text-surgent-muted hover:text-surgent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-surgent-primary/80"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+          >
+            {mobileOpen ? (
+              <X className="size-4" aria-hidden />
+            ) : (
+              <Menu className="size-4" aria-hidden />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile drawer */}
@@ -114,24 +112,18 @@ export function NavBar({
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="py-3.5 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-surgent-muted hover:text-surgent-foreground transition-colors"
+                  className="py-3.5 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-surgent-muted transition-colors hover:text-surgent-foreground"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 py-4">
-                <div className="flex justify-end pb-1">
-                  <ThemeToggle />
-                </div>
-                <SurgentButton variant="ghost" size="md" className="w-full justify-center">
-                  Sign In
-                </SurgentButton>
+              <div className="py-4">
                 <SurgentButton
                   variant="primary"
                   size="md"
+                  href={ctaHref}
                   className="w-full justify-center"
-                  onClick={() => router.push(ctaHref)}
                 >
                   {ctaLabel}
                 </SurgentButton>
