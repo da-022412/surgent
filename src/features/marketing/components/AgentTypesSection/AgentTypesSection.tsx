@@ -80,7 +80,7 @@ export function AgentTypesSection() {
         <SectionHeader
           eyebrow="Where We Deploy"
           headline="Built for the functions that run your business."
-          description="Surgent deploys agent systems inside enterprise teams across the operational functions where coordination costs are highest."
+          description="SurgentAI deploys agent systems inside enterprise teams across the operational functions where coordination costs are highest."
           align="center"
         />
 

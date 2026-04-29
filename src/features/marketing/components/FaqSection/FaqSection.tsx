@@ -33,7 +33,7 @@ const faqs: AccordionEntry[] = [
     value: "team-involvement",
     question: "How much work does my team need to do?",
     answer:
-      "Your team provides context on the workflow and systems involved — typically under 20 hours across all stakeholders. Surgent handles the design and deployment while coordinating with the appropriate technical or operational contacts.",
+      "Your team provides context on the workflow and systems involved — typically under 20 hours across all stakeholders. SurgentAI handles the design and deployment while coordinating with the appropriate technical or operational contacts.",
   },
   {
     value: "security",

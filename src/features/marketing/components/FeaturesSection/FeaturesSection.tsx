@@ -1,26 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Clock, Zap, Sparkles } from "lucide-react";
 import { EyebrowLabel } from "@/components/surgent/EyebrowLabel";
 
 const pillars = [
   {
-    number: ".01",
+    icon: Clock,
     title: "Reduce Operational Overhead",
     description:
       "AI agents remove manual coordination, approvals, and repetitive operational work across systems — freeing your team for higher-leverage decisions.",
   },
   {
-    number: ".02",
+    icon: Zap,
     title: "Accelerate Execution",
     description:
       "Processes that once required multiple team handoffs can now execute continuously. Speed compounds: faster cycles mean faster learning and faster growth.",
   },
   {
-    number: ".03",
-    title: "Scale Without Hiring",
+    icon: Sparkles,
+    title: "Free Your Team to Do Better Work",
     description:
-      "Operational output increases without adding headcount or new coordination layers. The same team does more — with better accuracy and zero fatigue.",
+      "When agents handle the repetitive work, your team gets their time back. Less grind, more impact — and the kind of work people actually want to show up for.",
   },
 ];
 
@@ -48,9 +49,7 @@ export function FeaturesSection() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.3, ease: "easeOut", delay: index * 0.07 }}
             >
-              <span className="font-mono text-3xl font-semibold tracking-tight text-surgent-primary/30">
-                {pillar.number}
-              </span>
+              <pillar.icon className="size-6 text-surgent-primary" strokeWidth={1.5} />
               <h3 className="font-sans text-lg font-semibold leading-snug text-surgent-foreground">
                 {pillar.title}
               </h3>

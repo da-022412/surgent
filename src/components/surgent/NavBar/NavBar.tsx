@@ -50,7 +50,7 @@ export function NavBar({
             className="size-2 rounded-none bg-surgent-primary transition-all duration-200 group-hover:shadow-[0_0_8px_oklch(82.55%_0.182_145_/_0.6)]"
           />
           <span className="font-mono text-sm font-semibold uppercase tracking-[0.12em] text-surgent-foreground">
-            Surgent
+            SurgentAI
           </span>
         </Link>
 

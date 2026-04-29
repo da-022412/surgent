@@ -31,7 +31,7 @@ export function FooterSection() {
             <div className="flex items-center gap-2">
               <span className="size-2 rounded-none bg-surgent-primary" aria-hidden />
               <span className="font-mono text-sm font-semibold uppercase tracking-[0.12em] text-surgent-foreground">
-                Surgent
+                SurgentAI
               </span>
             </div>
             <p className="max-w-[180px] font-sans text-sm leading-relaxed text-surgent-muted">
@@ -62,7 +62,7 @@ export function FooterSection() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-surgent-border/60 pt-8 md:flex-row">
           <p className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted/50">
-            © 2026 Surgent AI, Inc. All rights reserved.
+            © 2026 SurgentAI, Inc. All rights reserved.
           </p>
           <p className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted/50">
             Company names and logos are trademarks of their respective owners.

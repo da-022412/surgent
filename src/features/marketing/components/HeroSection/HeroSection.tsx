@@ -26,7 +26,7 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <EyebrowLabel>AI Automation Agency</EyebrowLabel>
+        <EyebrowLabel>Business Owners</EyebrowLabel>
       </motion.div>
 
       <motion.h1
@@ -35,9 +35,9 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: "easeOut", delay: 0.06 }}
       >
-        Transform Your Enterprise
+        Ready to Transform
         <br />
-        <span className="text-surgent-primary">With AI Agents.</span>
+        <span className="text-surgent-primary">Your Business With AI?</span>
       </motion.h1>
 
       <motion.p
@@ -46,8 +46,8 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.12 }}
       >
-        Custom AI implementations tailored to your business that automate entire departments end to
-        end. No generalized software. No 18-month timelines.
+        SurgentAI builds custom AI agents for your business — so your team spends less time on
+        repetitive work and more time on what actually moves the needle.
       </motion.p>
 
       <motion.div

@@ -34,7 +34,7 @@ export function IntegrationsSection() {
             <SectionHeader
               eyebrow="Fully Integrated"
               headline="Built to Work With Your Systems."
-              description="Surgent operates across your existing tools — connecting data, workflows, and systems into a single operational layer. We'll never force a migration, but will support you through one if you'd like."
+              description="SurgentAI operates across your existing tools — connecting data, workflows, and systems into a single operational layer. We'll never force a migration, but will support you through one if you'd like."
             />
             <div>
               <SurgentButton variant="ghost" size="sm" href="#">

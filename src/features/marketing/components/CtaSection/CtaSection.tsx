@@ -8,7 +8,7 @@ export function CtaSection() {
         <SectionHeader
           eyebrow="Schedule Discovery"
           headline="Deploy Your First AI Agent."
-          description="A short conversation with the Surgent team to identify operational workflows where our agents could deliver immediate impact."
+          description="A short conversation with the SurgentAI team to identify operational workflows where our agents could deliver immediate impact."
           align="center"
         />
         <SurgentButton variant="primary" size="lg" href="#">

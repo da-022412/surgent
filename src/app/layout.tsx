@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SurgentAI — AI Automation Agency",
   description:
-    "Surgent deploys custom AI agents that handle your most repetitive workflows — so your team can focus on work that actually matters.",
+    "SurgentAI builds custom AI agents for your business — so your team spends less time on repetitive work and more time on what actually moves the needle.",
 };
 
 export default function RootLayout({
