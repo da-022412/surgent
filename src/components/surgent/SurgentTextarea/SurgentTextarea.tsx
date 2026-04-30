@@ -33,7 +33,7 @@ export function SurgentTextarea({
         id={fieldId}
         className={cn(
           "min-h-[100px] rounded-sm border-surgent-border bg-surgent-surface text-surgent-foreground",
-          "placeholder:text-surgent-muted resize-y",
+          "placeholder:text-surgent-muted/50 resize-y",
           "focus-visible:border-surgent-primary focus-visible:ring-surgent-primary/20",
           "disabled:opacity-40",
           error &&

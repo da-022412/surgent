@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/surgent/SectionHeader";
-import { SurgentButton } from "@/components/surgent/SurgentButton";
+import { BookACallButton } from "@/features/marketing/components/BookACallModal";
 
 const outerRing = [
   { name: "HubSpot", x: 140, y: 30 },
@@ -37,9 +37,9 @@ export function IntegrationsSection() {
               description="SurgentAI operates across your existing tools — connecting data, workflows, and systems into a single operational layer. We'll never force a migration, but will support you through one if you'd like."
             />
             <div>
-              <SurgentButton variant="ghost" size="sm" href="#">
+              <BookACallButton variant="ghost" size="sm">
                 Book a Call
-              </SurgentButton>
+              </BookACallButton>
             </div>
           </div>
 

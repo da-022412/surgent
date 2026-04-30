@@ -38,9 +38,9 @@ export function DataCard({
       {(title || meta) && (
         <div className="flex items-start justify-between gap-2 pt-0.5">
           {title && (
-            <h3 className="text-sm font-semibold leading-snug text-surgent-foreground tracking-tight">
+            <p className="text-sm font-semibold leading-snug text-surgent-foreground tracking-tight">
               {title}
-            </h3>
+            </p>
           )}
           {meta && (
             <span className="shrink-0 font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted">

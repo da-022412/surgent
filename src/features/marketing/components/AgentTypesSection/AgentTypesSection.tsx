@@ -116,7 +116,7 @@ export function AgentTypesSection() {
           ))}
         </div>
 
-        <p className="text-center font-mono text-[0.6rem] uppercase tracking-[0.15em] text-surgent-muted/50">
+        <p className="text-center font-mono text-[0.6rem] uppercase tracking-[0.15em] text-surgent-muted">
           + 300 additional enterprise workflows
         </p>
       </div>

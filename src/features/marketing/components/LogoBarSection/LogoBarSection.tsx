@@ -11,7 +11,7 @@ export function LogoBarSection() {
           {logos.map((logo) => (
             <span
               key={logo}
-              className="font-mono text-sm font-medium tracking-tight text-surgent-muted/50 transition-colors hover:text-surgent-muted"
+              className="font-mono text-sm font-medium tracking-tight text-surgent-muted transition-colors hover:text-surgent-foreground"
             >
               {logo}
             </span>

@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/surgent/SectionHeader";
-import { SurgentButton } from "@/components/surgent/SurgentButton";
+import { BookACallButton } from "@/features/marketing/components/BookACallModal";
 
 export function CtaSection() {
   return (
@@ -11,9 +11,9 @@ export function CtaSection() {
           description="A short conversation with the SurgentAI team to identify operational workflows where our agents could deliver immediate impact."
           align="center"
         />
-        <SurgentButton variant="primary" size="lg" href="#">
+        <BookACallButton variant="primary" size="lg">
           Book a Discovery Call
-        </SurgentButton>
+        </BookACallButton>
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export function SurgentInputField({
         id={inputId}
         className={cn(
           "rounded-sm border-surgent-border bg-surgent-surface text-surgent-foreground",
-          "placeholder:text-surgent-muted",
+          "placeholder:text-surgent-muted/50",
           "focus-visible:border-surgent-primary focus-visible:ring-surgent-primary/20",
           "disabled:opacity-40",
           error &&

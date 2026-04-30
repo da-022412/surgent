@@ -7,6 +7,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { SurgentButton } from "@/components/surgent/SurgentButton";
 import { ThemeToggle } from "@/components/surgent/ThemeToggle";
+import { BookACallButton } from "@/features/marketing/components/BookACallModal";
 
 export interface NavLink {
   label: string;
@@ -44,7 +45,7 @@ export function NavBar({
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2" aria-label="Surgent — home">
+        <Link href="/" className="group flex items-center gap-2" aria-label="SurgentAI — home">
           <span
             aria-hidden
             className="size-2 rounded-none bg-surgent-primary transition-all duration-200 group-hover:shadow-[0_0_8px_oklch(82.55%_0.182_145_/_0.6)]"
@@ -70,9 +71,9 @@ export function NavBar({
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <SurgentButton variant="primary" size="sm" href={ctaHref}>
+          <BookACallButton variant="primary" size="sm">
             {ctaLabel}
-          </SurgentButton>
+          </BookACallButton>
         </div>
 
         {/* Mobile controls */}
@@ -119,14 +120,9 @@ export function NavBar({
                 </Link>
               ))}
               <div className="py-4">
-                <SurgentButton
-                  variant="primary"
-                  size="md"
-                  href={ctaHref}
-                  className="w-full justify-center"
-                >
+                <BookACallButton variant="primary" size="md" className="w-full justify-center">
                   {ctaLabel}
-                </SurgentButton>
+                </BookACallButton>
               </div>
             </nav>
           </motion.div>

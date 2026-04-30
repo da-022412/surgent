@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SurgentButton } from "@/components/surgent/SurgentButton";
 import { EyebrowLabel } from "@/components/surgent/EyebrowLabel";
 import { DataCard } from "@/components/surgent/DataCard";
+import { SurgentButton } from "@/components/surgent/SurgentButton";
+import { BookACallButton } from "@/features/marketing/components/BookACallModal";
 
 const agents = [
   { name: "Lead Qualifier", active: true, metric: "2,847", unit: "leads / mo" },
@@ -56,9 +57,9 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.18 }}
       >
-        <SurgentButton variant="primary" size="lg" href="#">
+        <BookACallButton variant="primary" size="lg">
           Book a Discovery Call
-        </SurgentButton>
+        </BookACallButton>
         <SurgentButton variant="ghost" size="lg" href="#how-it-works">
           See How It Works
         </SurgentButton>

@@ -61,10 +61,10 @@ export function FooterSection() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-surgent-border/60 pt-8 md:flex-row">
-          <p className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted/50">
+          <p className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted">
             © 2026 SurgentAI, Inc. All rights reserved.
           </p>
-          <p className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted/50">
+          <p className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-surgent-muted">
             Company names and logos are trademarks of their respective owners.
           </p>
         </div>

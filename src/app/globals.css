@@ -122,7 +122,7 @@ html {
   --surgent-surface: oklch(16% 0.01 250);
   --surgent-border: oklch(25% 0.02 145);
   --surgent-foreground: oklch(92% 0.01 145);
-  --surgent-muted: oklch(60% 0.01 250);
+  --surgent-muted: oklch(75% 0.01 250);
   --surgent-grid-line: oklch(25% 0.02 145 / 0.18);
 
   /* ─── shadcn semantic vars — dark mode ─── */
