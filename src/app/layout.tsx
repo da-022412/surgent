@@ -14,9 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://getsurgent.ai"),
   title: "SurgentAI — AI Automation Agency",
   description:
     "SurgentAI builds custom AI agents for your business — so your team spends less time on repetitive work and more time on what actually moves the needle.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "SurgentAI — AI Automation Agency",
+    description:
+      "SurgentAI builds custom AI agents for your business — so your team spends less time on repetitive work and more time on what actually moves the needle.",
+    url: "https://getsurgent.ai",
+    siteName: "SurgentAI",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SurgentAI — AI Automation Agency",
+    description:
+      "SurgentAI builds custom AI agents for your business — so your team spends less time on repetitive work and more time on what actually moves the needle.",
+  },
 };
 
 export default function RootLayout({
