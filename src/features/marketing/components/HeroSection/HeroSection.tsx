@@ -22,40 +22,26 @@ const stats = [
 export function HeroSection() {
   return (
     <section className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 pb-20 pt-10 text-center sm:pt-24">
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-      >
+      <div>
         <EyebrowLabel>Business Owners</EyebrowLabel>
-      </motion.div>
+      </div>
 
-      <motion.h1
-        className="max-w-3xl font-sans text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-surgent-foreground md:text-[4.5rem]"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut", delay: 0.06 }}
-      >
+      <h1 className="max-w-3xl font-sans text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-surgent-foreground md:text-[4.5rem]">
         Ready to Transform
         <br />
         <span className="text-surgent-primary">Your Business With AI?</span>
-      </motion.h1>
+      </h1>
 
-      <motion.p
-        className="max-w-lg font-sans text-base leading-relaxed text-surgent-muted"
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, ease: "easeOut", delay: 0.12 }}
-      >
+      <p className="max-w-lg font-sans text-base leading-relaxed text-surgent-muted">
         SurgentAI builds custom AI agents for your business — so your team spends less time on
         repetitive work and more time on what actually moves the needle.
-      </motion.p>
+      </p>
 
       <motion.div
         className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, ease: "easeOut", delay: 0.18 }}
+        transition={{ duration: 0.3, ease: "easeOut", delay: 0.08 }}
       >
         <BookACallButton variant="primary" size="lg">
           Book a Discovery Call
@@ -67,9 +53,9 @@ export function HeroSection() {
 
       <motion.div
         className="mt-4 w-full max-w-2xl"
-        initial={{ opacity: 0, y: 28 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: "easeOut", delay: 0.28 }}
+        transition={{ duration: 0.4, ease: "easeOut", delay: 0.14 }}
       >
         <DataCard title="Active Agents" meta="Live · 3 running">
           <div className="flex flex-col divide-y divide-surgent-border/40">

@@ -60,6 +60,10 @@ export function BookACallModal() {
     }
   }
 
+  if (!open) {
+    return null;
+  }
+
   return (
     <BaseDialog.Root open={open} onOpenChange={handleOpenChange}>
       <BaseDialog.Portal>

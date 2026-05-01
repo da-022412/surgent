@@ -1,16 +1,17 @@
 "use client";
 
-import { createContext, useContext, useState, useSyncExternalStore } from "react";
+import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
 
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
-    dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }
 
 const COOKIE_NAME = "surgent-consent";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+const GTM_ID = "GTM-PBQMFLW9";
 
 function readConsentCookie(): string | null {
   const m = document.cookie.match(/(?:^|; )surgent-consent=([^;]*)/);
@@ -25,8 +26,47 @@ function setConsentCookie(value: "granted" | "denied") {
   document.cookie = `${COOKIE_NAME}=${value}; max-age=${COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
 }
 
+function ensureGtmLoaded() {
+  if (typeof window === "undefined") return;
+  if (document.querySelector(`script[data-gtm-id='${GTM_ID}']`)) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag(...args: unknown[]) {
+    window.dataLayer?.push(args);
+  };
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.dataset.gtmId = GTM_ID;
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+  document.head.appendChild(script);
+}
+
+function loadGtmWhenIdle() {
+  if (typeof window === "undefined") return;
+
+  const maybeRequestIdleCallback = (
+    globalThis as { requestIdleCallback?: typeof requestIdleCallback }
+  ).requestIdleCallback;
+
+  if (maybeRequestIdleCallback) {
+    maybeRequestIdleCallback(() => ensureGtmLoaded(), { timeout: 3000 });
+    return;
+  }
+
+  globalThis.setTimeout(() => ensureGtmLoaded(), 2000);
+}
+
 function updateGtagConsent(granted: boolean) {
-  if (typeof window === "undefined" || !window.gtag) return;
+  if (typeof window === "undefined") return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag(...args: unknown[]) {
+      window.dataLayer?.push(args);
+    };
+
   const state = granted ? "granted" : "denied";
   window.gtag("consent", "update", {
     analytics_storage: state,
@@ -53,8 +93,16 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
   const cookieValue = useSyncExternalStore(subscribe, readConsentCookie, () => "ssr");
   const visible = !dismissed && cookieValue === null;
 
+  useEffect(() => {
+    if (cookieValue === "granted") {
+      updateGtagConsent(true);
+      loadGtmWhenIdle();
+    }
+  }, [cookieValue]);
+
   function accept() {
     setConsentCookie("granted");
+    ensureGtmLoaded();
     updateGtagConsent(true);
     setDismissed(true);
   }
