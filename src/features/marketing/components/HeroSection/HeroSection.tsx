@@ -28,8 +28,8 @@ export function HeroSection() {
 
       <motion.h1
         className="max-w-3xl font-sans text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-surgent-foreground md:text-[4.5rem]"
-        initial={false}
-        animate={{ y: [0, -2, 0] }}
+        initial={{ y: 12 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.32, ease: "easeOut", delay: 0.04 }}
       >
         Ready to Transform
@@ -39,8 +39,8 @@ export function HeroSection() {
 
       <motion.p
         className="max-w-lg font-sans text-base leading-relaxed text-surgent-muted"
-        initial={false}
-        animate={{ y: [0, -1, 0] }}
+        initial={{ y: 10 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.28, ease: "easeOut", delay: 0.08 }}
       >
         SurgentAI builds custom AI agents for your business — so your team spends less time on
