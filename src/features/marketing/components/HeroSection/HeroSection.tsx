@@ -26,16 +26,26 @@ export function HeroSection() {
         <EyebrowLabel>Business Owners</EyebrowLabel>
       </div>
 
-      <h1 className="max-w-3xl font-sans text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-surgent-foreground md:text-[4.5rem]">
+      <motion.h1
+        className="max-w-3xl font-sans text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-surgent-foreground md:text-[4.5rem]"
+        initial={false}
+        animate={{ y: [0, -2, 0] }}
+        transition={{ duration: 0.32, ease: "easeOut", delay: 0.04 }}
+      >
         Ready to Transform
         <br />
         <span className="text-surgent-primary">Your Business With AI?</span>
-      </h1>
+      </motion.h1>
 
-      <p className="max-w-lg font-sans text-base leading-relaxed text-surgent-muted">
+      <motion.p
+        className="max-w-lg font-sans text-base leading-relaxed text-surgent-muted"
+        initial={false}
+        animate={{ y: [0, -1, 0] }}
+        transition={{ duration: 0.28, ease: "easeOut", delay: 0.08 }}
+      >
         SurgentAI builds custom AI agents for your business — so your team spends less time on
         repetitive work and more time on what actually moves the needle.
-      </p>
+      </motion.p>
 
       <motion.div
         className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center"

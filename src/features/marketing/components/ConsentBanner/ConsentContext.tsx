@@ -45,16 +45,19 @@ function ensureGtmLoaded() {
 function loadGtmWhenIdle() {
   if (typeof window === "undefined") return;
 
-  const maybeRequestIdleCallback = (
-    globalThis as { requestIdleCallback?: typeof requestIdleCallback }
-  ).requestIdleCallback;
+  let loaded = false;
+  const loadOnce = () => {
+    if (loaded) return;
+    loaded = true;
+    ensureGtmLoaded();
+    window.removeEventListener("pointerdown", loadOnce);
+    window.removeEventListener("keydown", loadOnce);
+    window.removeEventListener("scroll", loadOnce);
+  };
 
-  if (maybeRequestIdleCallback) {
-    maybeRequestIdleCallback(() => ensureGtmLoaded(), { timeout: 3000 });
-    return;
-  }
-
-  globalThis.setTimeout(() => ensureGtmLoaded(), 2000);
+  window.addEventListener("pointerdown", loadOnce, { once: true, passive: true });
+  window.addEventListener("keydown", loadOnce, { once: true });
+  window.addEventListener("scroll", loadOnce, { once: true, passive: true });
 }
 
 function updateGtagConsent(granted: boolean) {
