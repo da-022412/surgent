@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,6 +54,12 @@ export default function RootLayout({
             __html: `(function(){var t=localStorage.getItem('surgent-theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})()`,
           }}
         />
+        {/* Consent Mode v2 defaults — must run before gtag.js loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});try{var m=document.cookie.match(/(?:^|; )surgent-consent=([^;]*)/);if(m&&decodeURIComponent(m[1])==='granted'){gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}`,
+          }}
+        />
       </head>
       <body className="min-h-screen">
         <a
@@ -62,6 +69,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Providers>{children}</Providers>
+        <GoogleAnalytics />
       </body>
     </html>
   );

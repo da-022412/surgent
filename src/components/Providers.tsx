@@ -3,6 +3,7 @@
 import { MotionConfig } from "framer-motion";
 import { TooltipProvider } from "@/components/ui/Tooltip";
 import { BookACallProvider, BookACallModal } from "@/features/marketing/components/BookACallModal";
+import { ConsentBanner } from "@/features/marketing/components/ConsentBanner";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <BookACallProvider>
           {children}
           <BookACallModal />
+          <ConsentBanner />
         </BookACallProvider>
       </TooltipProvider>
     </MotionConfig>
