@@ -106,7 +106,7 @@ export function NavBar({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="overflow-hidden border-t border-surgent-border bg-surgent-background md:hidden"
+            className="absolute inset-x-0 top-full overflow-hidden border-t border-surgent-border bg-surgent-background md:hidden"
           >
             <nav className="flex flex-col divide-y divide-surgent-border/40 px-6">
               {links.map((link) => (

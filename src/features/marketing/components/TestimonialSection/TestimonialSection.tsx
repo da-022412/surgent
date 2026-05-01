@@ -1,6 +1,6 @@
 export function TestimonialSection() {
   return (
-    <section id="case-studies" className="border-t border-surgent-border py-24">
+    <section id="case-studies" className="border-t border-surgent-border py-10 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center">
           <blockquote className="font-sans text-2xl font-semibold leading-snug tracking-[-0.02em] text-surgent-foreground md:text-3xl">

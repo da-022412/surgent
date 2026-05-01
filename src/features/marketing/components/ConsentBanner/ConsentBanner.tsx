@@ -1,62 +1,11 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SurgentButton } from "@/components/surgent/SurgentButton";
-
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void;
-    dataLayer: unknown[];
-  }
-}
-
-const COOKIE_NAME = "surgent-consent";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
-
-function readConsentCookie(): string | null {
-  const m = document.cookie.match(/(?:^|; )surgent-consent=([^;]*)/);
-  return m ? decodeURIComponent(m[1]) : null;
-}
-
-function subscribe() {
-  return () => {};
-}
-
-function setConsentCookie(value: "granted" | "denied") {
-  document.cookie = `${COOKIE_NAME}=${value}; max-age=${COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
-}
-
-function updateGtagConsent(granted: boolean) {
-  if (typeof window === "undefined" || !window.gtag) return;
-  const state = granted ? "granted" : "denied";
-  window.gtag("consent", "update", {
-    analytics_storage: state,
-    ad_storage: state,
-    ad_user_data: state,
-    ad_personalization: state,
-  });
-}
+import { useConsent } from "./ConsentContext";
 
 export function ConsentBanner() {
-  const [dismissed, setDismissed] = useState(false);
-  // Server snapshot returns a non-null sentinel so the banner is absent from SSR HTML.
-  // On the client, useSyncExternalStore reads the real cookie.
-  const cookieValue = useSyncExternalStore(subscribe, readConsentCookie, () => "ssr");
-
-  const visible = !dismissed && cookieValue === null;
-
-  function handleAccept() {
-    setConsentCookie("granted");
-    updateGtagConsent(true);
-    setDismissed(true);
-  }
-
-  function handleDecline() {
-    setConsentCookie("denied");
-    updateGtagConsent(false);
-    setDismissed(true);
-  }
+  const { visible, accept, decline } = useConsent();
 
   return (
     <AnimatePresence>
@@ -77,10 +26,10 @@ export function ConsentBanner() {
               No ad tracking or profiling. You can change this at any time.
             </p>
             <div className="flex justify-end gap-2">
-              <SurgentButton variant="ghost" size="sm" onClick={handleDecline}>
+              <SurgentButton variant="ghost" size="sm" onClick={decline}>
                 Decline
               </SurgentButton>
-              <SurgentButton variant="primary" size="sm" onClick={handleAccept}>
+              <SurgentButton variant="primary" size="sm" onClick={accept}>
                 Accept
               </SurgentButton>
             </div>

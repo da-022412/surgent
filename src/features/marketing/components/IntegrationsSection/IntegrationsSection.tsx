@@ -21,7 +21,7 @@ const innerRing = [
 
 export function IntegrationsSection() {
   return (
-    <section className="border-t border-surgent-border py-24">
+    <section className="border-t border-surgent-border py-10 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           className="grid items-center gap-16 md:grid-cols-2"

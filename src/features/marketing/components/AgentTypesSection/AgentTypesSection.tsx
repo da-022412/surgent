@@ -75,7 +75,7 @@ const deployments = [
 
 export function AgentTypesSection() {
   return (
-    <section id="agents" className="border-t border-surgent-border py-24">
+    <section id="agents" className="border-t border-surgent-border py-10 sm:py-24">
       <div className="mx-auto max-w-6xl space-y-12 px-6">
         <SectionHeader
           eyebrow="Where We Deploy"

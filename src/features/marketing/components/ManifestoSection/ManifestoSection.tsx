@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function ManifestoSection() {
   return (
-    <section className="border-t border-surgent-border py-24">
+    <section className="border-t border-surgent-border py-10 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           className="flex flex-col gap-12 md:flex-row md:items-start md:gap-20"

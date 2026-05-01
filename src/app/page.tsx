@@ -11,13 +11,14 @@ import { TestimonialSection } from "@/features/marketing/components/TestimonialS
 import { FaqSection } from "@/features/marketing/components/FaqSection";
 import { CtaSection } from "@/features/marketing/components/CtaSection";
 import { FooterSection } from "@/features/marketing/components/FooterSection";
+import { PageMain } from "@/features/marketing/components/PageMain";
 
 export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-surgent-background">
       <GridBackground />
       <NavBar />
-      <main id="main-content" className="relative">
+      <PageMain>
         <HeroSection />
         <LogoBarSection />
         <ManifestoSection />
@@ -28,8 +29,8 @@ export default function HomePage() {
         <TestimonialSection />
         <FaqSection />
         <CtaSection />
-      </main>
-      <FooterSection />
+        <FooterSection />
+      </PageMain>
     </div>
   );
 }

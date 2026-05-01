@@ -21,7 +21,7 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 pb-20 pt-24 text-center">
+    <section className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 pb-20 pt-10 text-center sm:pt-24">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

@@ -27,7 +27,7 @@ const pillars = [
 
 export function FeaturesSection() {
   return (
-    <section className="border-t border-surgent-border py-24">
+    <section className="border-t border-surgent-border py-10 sm:py-24">
       <div className="mx-auto max-w-6xl space-y-16 px-6">
         <div className="flex flex-col items-center gap-4 text-center">
           <EyebrowLabel>Why It Matters</EyebrowLabel>
