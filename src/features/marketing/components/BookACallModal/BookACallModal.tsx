@@ -13,9 +13,10 @@ interface FormState {
   email: string;
   company: string;
   challenge: string;
+  website: string; // honeypot — must stay empty
 }
 
-const emptyForm: FormState = { name: "", email: "", company: "", challenge: "" };
+const emptyForm: FormState = { name: "", email: "", company: "", challenge: "", website: "" };
 
 export function BookACallModal() {
   const { open, setOpen } = useBookACall();
@@ -23,6 +24,7 @@ export function BookACallModal() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>(emptyForm);
+  const [openedAt] = useState(() => Date.now());
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -36,7 +38,7 @@ export function BookACallModal() {
       const res = await fetch("/api/book-a-call", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _t: openedAt }),
       });
       if (!res.ok) {
         const data = await res.json();
@@ -109,6 +111,17 @@ export function BookACallModal() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  {/* Honeypot — hidden from real users, bots will fill this */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={form.website}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
+                  />
                   <div className="grid gap-4 sm:grid-cols-2">
                     <SurgentInputField
                       label="Name"
