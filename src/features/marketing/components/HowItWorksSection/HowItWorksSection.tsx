@@ -6,27 +6,27 @@ import { EyebrowLabel } from "@/components/surgent/EyebrowLabel";
 const steps = [
   {
     number: "01",
-    title: "AI Opportunity Audit",
+    title: "Workflow Audit",
     description:
-      "We map how work moves through your organization — across teams, systems, and decision points — to identify where agents can reduce overhead or replace manual coordination.",
+      "We look at how work actually moves through your business — where your team's time goes, what's repetitive, and where an agent could take over.",
   },
   {
     number: "02",
-    title: "Process Architecture",
+    title: "Agent Design",
     description:
-      "We design and build the agent system that will execute the workflow, integrating it with the enterprise tools, data, and operational logic that power the process.",
+      "We build the agent around your existing tools and processes. No new software, no migrations — it plugs into what your team already uses.",
   },
   {
     number: "03",
-    title: "Production Deployment",
+    title: "Go Live",
     description:
-      "We deploy into your live stack — connecting agents to live systems so they begin executing operational work in production. No migrations required.",
+      "Your agent starts handling the workflow in real time. Most businesses see meaningful time savings within the first week.",
   },
   {
     number: "04",
-    title: "Agent Optimization",
+    title: "Ongoing Improvement",
     description:
-      "After deployment, we strengthen decision logic, increase reliability, and extend agents into new operational responsibilities over time.",
+      "We monitor how the agent performs, sharpen its decision-making, and extend it to handle more as your business grows.",
   },
 ];
 

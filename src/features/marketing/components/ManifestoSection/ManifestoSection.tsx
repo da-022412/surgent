@@ -15,21 +15,21 @@ export function ManifestoSection() {
         >
           <div className="md:w-1/2">
             <h2 className="font-sans text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-surgent-foreground md:text-5xl">
-              We Don&apos;t Just Automate Tasks.{" "}
-              <span className="text-surgent-primary">We Transform Departments.</span>
+              We Don&apos;t Replace Your Team or Your Tools.{" "}
+              <span className="text-surgent-primary">We Make Both Work Harder.</span>
             </h2>
           </div>
           <div className="flex flex-col gap-6 md:w-1/2 md:pt-2">
             <p className="font-sans text-base leading-relaxed text-surgent-muted">
-              A single automation that saves an hour isn&apos;t transformation. We architect agent
-              systems that handle end-to-end workflows — from intake to execution to reporting —
-              replacing entire process chains, not individual steps.
+              One automation that saves an hour isn&apos;t the point. We build agents that take over
+              entire workflows — inside the tools your team already uses — so they stop doing the
+              work a machine can handle and start doing the work only they can.
             </p>
             <div className="flex flex-col gap-4 border-t border-surgent-border/60 pt-6">
               {[
-                "Your finance team operates like it's 3x the size.",
-                "Your ops team ships without the backlog.",
-                "Your revenue team closes faster.",
+                "Your team handles more without working more hours.",
+                "Fewer handoffs, less chasing, less dropping the ball.",
+                "Your best people spend their time on the work that actually matters.",
               ].map((line) => (
                 <div key={line} className="flex items-start gap-3">
                   <span className="mt-[7px] size-1.5 shrink-0 bg-surgent-primary" />

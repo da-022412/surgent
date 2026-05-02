@@ -7,21 +7,21 @@ import { EyebrowLabel } from "@/components/surgent/EyebrowLabel";
 const pillars = [
   {
     icon: Clock,
-    title: "Reduce Operational Overhead",
+    title: "Give Your Team Their Time Back",
     description:
-      "AI agents remove manual coordination, approvals, and repetitive operational work across systems — freeing your team for higher-leverage decisions.",
+      "AI agents take over the manual, repetitive work — chasing approvals, updating records, moving information between tools — so your team stops doing it.",
   },
   {
     icon: Zap,
-    title: "Accelerate Execution",
+    title: "Get More Done Without Hiring",
     description:
-      "Processes that once required multiple team handoffs can now execute continuously. Speed compounds: faster cycles mean faster learning and faster growth.",
+      "Tasks that used to require multiple people going back and forth now happen automatically. Your team gets more output without more headcount.",
   },
   {
     icon: Sparkles,
-    title: "Free Your Team to Do Better Work",
+    title: "Keep the Tools You Already Use",
     description:
-      "When agents handle the repetitive work, your team gets their time back. Less grind, more impact — and the kind of work people actually want to show up for.",
+      "Agents work inside your existing software — no migrations, no switching costs. Your team keeps working the way they always have, just faster.",
   },
 ];
 
@@ -32,11 +32,12 @@ export function FeaturesSection() {
         <div className="flex flex-col items-center gap-4 text-center">
           <EyebrowLabel>Why It Matters</EyebrowLabel>
           <h2 className="max-w-2xl font-sans text-3xl font-bold leading-tight tracking-[-0.03em] text-surgent-foreground md:text-4xl">
-            Only AI-Native Organizations Will Operate at This Level.
+            The businesses pulling ahead aren&apos;t working harder. They&apos;ve just stopped doing
+            the work that shouldn&apos;t require a person.
           </h2>
           <p className="max-w-xl font-sans text-base leading-relaxed text-surgent-muted">
-            AI agents don&apos;t just automate tasks — they remove the operational bottlenecks that
-            slow organizations down.
+            AI agents handle the repetitive work so your team can focus on what actually grows your
+            business.
           </p>
         </div>
         <div className="grid gap-px border border-surgent-border bg-surgent-border md:grid-cols-3">

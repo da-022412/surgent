@@ -6,31 +6,26 @@ import { DataCard } from "@/components/surgent/DataCard";
 
 const deployments = [
   {
-    department: "Finance Operations",
+    department: "Accounting & Finance",
     description:
-      "Agents handle accounts payable, accounts receivable, reconciliation, and forecasting. Close your books faster without the overhead.",
+      "Agents handle invoicing, reconciliation, and reporting so your books stay current without someone manually chasing it down.",
     capabilities: [
-      "AP exception triage",
-      "Cross-system reconciliation",
-      "Close readiness tracking",
-      "Cash position & forecasting",
+      "Invoice processing",
+      "Reconciliation",
+      "Financial reporting",
+      "Cash flow tracking",
     ],
   },
   {
-    department: "Revenue Operations",
+    department: "Sales & Revenue",
     description:
-      "Agents handle CRM hygiene, deal desk approvals, pipeline reporting, and forecast assembly. Keep reps selling instead of doing ops work.",
-    capabilities: [
-      "Deal orchestration & routing",
-      "CRM auto-enrichment",
-      "Forecast intelligence",
-      "Commission validation",
-    ],
+      "Agents keep your CRM updated, follow up with leads, and surface the right information so your team spends time selling, not doing admin.",
+    capabilities: ["Lead follow-up", "CRM updates", "Pipeline reporting", "Commission tracking"],
   },
   {
-    department: "Procurement",
+    department: "Purchasing & Vendors",
     description:
-      "Agents manage vendor onboarding, purchasing approvals, contract coordination, and supplier communication. Cut cycle times.",
+      "Agents handle purchase requests, vendor communication, and approval routing so nothing sits waiting on someone's desk.",
     capabilities: [
       "Vendor onboarding",
       "Approval routing",
@@ -39,34 +34,34 @@ const deployments = [
     ],
   },
   {
-    department: "Compliance & Risk",
+    department: "Compliance & Reporting",
     description:
-      "Agents track regulatory deadlines, assemble audit documentation, and flag exceptions before they become findings.",
+      "Agents track deadlines, pull together documentation, and flag anything that needs attention before it becomes a problem.",
     capabilities: [
-      "Regulatory deadline tracking",
+      "Deadline tracking",
       "Audit documentation",
-      "Policy adherence monitoring",
+      "Policy monitoring",
       "Exception flagging",
     ],
   },
   {
-    department: "Logistics Operations",
+    department: "Operations & Logistics",
     description:
-      "Agents handle exception detection, demand planning, and supplier coordination across your ERP and WMS systems.",
+      "Agents monitor inventory, flag issues early, and coordinate with suppliers — so your operations keep moving without constant oversight.",
     capabilities: [
-      "Exception detection & routing",
-      "Demand sensing",
-      "Inventory optimization",
-      "Quality defect detection",
+      "Inventory tracking",
+      "Issue detection & routing",
+      "Supplier coordination",
+      "Quality monitoring",
     ],
   },
   {
-    department: "HR Operations",
+    department: "HR & Onboarding",
     description:
-      "Agents automate onboarding workflows, policy updates, and internal routing — so HR focuses on people, not process.",
+      "Agents handle new hire workflows, policy distribution, and internal requests so your team spends time on people, not paperwork.",
     capabilities: [
-      "Onboarding automation",
-      "Policy update distribution",
+      "Onboarding workflows",
+      "Policy updates",
       "Internal routing",
       "Compliance tracking",
     ],
@@ -80,7 +75,7 @@ export function AgentTypesSection() {
         <SectionHeader
           eyebrow="Where We Deploy"
           headline="Built for the functions that run your business."
-          description="SurgentAI deploys agent systems inside enterprise teams across the operational functions where coordination costs are highest."
+          description="Built for the parts of your business where your team's time is most likely going to waste."
           align="center"
         />
 
@@ -117,7 +112,7 @@ export function AgentTypesSection() {
         </div>
 
         <p className="text-center font-mono text-[0.6rem] uppercase tracking-[0.15em] text-surgent-muted">
-          + 300 additional enterprise workflows
+          + 300 additional workflows
         </p>
       </div>
     </section>
