@@ -2,8 +2,6 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { bookACallEmailHtml } from "./email";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const MIN_FORM_MS = 3000;
 
 export async function POST(request: Request) {
@@ -22,6 +20,16 @@ export async function POST(request: Request) {
   if (!name || !email) {
     return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
   }
+
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (!resendApiKey) {
+    return NextResponse.json(
+      { error: "Server misconfiguration: missing RESEND_API_KEY." },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(resendApiKey);
 
   const { error } = await resend.emails.send({
     from: "SurgentAI <onboarding@resend.dev>",
