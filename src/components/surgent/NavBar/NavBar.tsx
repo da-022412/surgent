@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { SurgentButton } from "@/components/surgent/SurgentButton";
 import { ThemeToggle } from "@/components/surgent/ThemeToggle";
 import { BookACallButton } from "@/features/marketing/components/BookACallModal";
 
@@ -17,7 +16,6 @@ export interface NavLink {
 interface NavBarProps {
   links?: NavLink[];
   ctaLabel?: string;
-  ctaHref?: string;
   className?: string;
 }
 
@@ -28,12 +26,7 @@ const defaultLinks: NavLink[] = [
   { label: "FAQ", href: "#faq" },
 ];
 
-export function NavBar({
-  links = defaultLinks,
-  ctaLabel = "Book a Call",
-  ctaHref = "#cta",
-  className,
-}: NavBarProps) {
+export function NavBar({ links = defaultLinks, ctaLabel = "Book a Call", className }: NavBarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
