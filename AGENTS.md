@@ -198,7 +198,7 @@ Component pages and node IDs:
 
 ### High priority
 - **Monorepo split** — move the current marketing site into `apps/web`, add a separate private app in `apps/intel` for the competitive analysis tool, and extract shared code into `packages/*` (`ui`, `lib`, and optionally shared design tokens)
-- **Next.js patch update** — repo is on `next@16.2.4`; latest stable confirmed on 2026-05-16 is `16.2.6`. Bump `next` and `eslint-config-next` together, then run `pnpm install` and `pnpm type-check`
+- **Next.js patch update** — completed on 2026-05-16. Repo now uses `next@16.2.6` and `eslint-config-next@16.2.6`
 - **Custom Resend sender domain** — currently sending from `onboarding@resend.dev`. Add `getsurgent.ai` in the Resend dashboard, verify DNS, then update `from` in `src/app/api/book-a-call/route.ts` to `noreply@getsurgent.ai`
 - **Case studies** — `TestimonialSection` (`#case-studies`) is a single placeholder quote. Needs real case study content or a multi-card layout once client work exists
 - **Real logo bar** — `LogoBarSection` uses placeholder company names. Replace with actual client/partner logos (SVGs preferred)
